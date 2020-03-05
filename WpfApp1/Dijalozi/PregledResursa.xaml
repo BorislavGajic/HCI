@@ -1,0 +1,43 @@
+﻿<Window x:Class="WpfApp1.Dijalozi.PregledResursa"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.Dijalozi"
+        mc:Ignorable="d"
+        Title="PregledResursa"  Height="498.79" Width="970" WindowStartupLocation="CenterScreen">
+    <Grid Height="466" VerticalAlignment="Top">
+
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="{DynamicResource {x:Static SystemColors.InfoColorKey}}" Offset="1"/>
+                <GradientStop Color="#FF2DE7F9"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <DataGrid x:Name="dgrMain"  ItemsSource="{Binding Res}" IsReadOnly="True" AutoGenerateColumns="False" Height="322" VerticalAlignment="Top">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Oznaka" Binding="{Binding Id}" Width="3*" />
+                <DataGridTextColumn Header="Naziv" Binding="{Binding Ime}" Width="3*"/>
+                <DataGridTextColumn Header="Opis" Binding="{Binding Opis}" Width="3*"/>
+                <DataGridTextColumn Header="Tip" Binding="{Binding Tip}" Width="3*"/>
+                <DataGridTextColumn Header="Etiketa" Binding="{Binding Etiketa}" Width="3*"/>
+                <DataGridTextColumn Header="Datum" Binding="{Binding Datum, StringFormat=\{0:dd.MM.yyyy\}}" Width="3*"/>
+                <DataGridTextColumn Header="Frekvencija pojavljivanja"  Binding="{Binding Path= FreqPojavljivanja}"  Width="5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Jedinica mere" Binding="{Binding Path= JedinicaMere}" Width="5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Cena" Width="4*" Binding="{Binding Cena}"></DataGridTextColumn>
+                <DataGridCheckBoxColumn Header="Obnovljivost"  Binding="{Binding Path= Obnovljiv}"  Width="3*"></DataGridCheckBoxColumn>
+                <DataGridCheckBoxColumn Header="Strateska vaznost"  Binding="{Binding Path= StrateskaVaznost}"  Width="3*"></DataGridCheckBoxColumn>
+                <DataGridCheckBoxColumn Header="Eksploatacija"  Binding="{Binding Path= Eksploatacija}"  Width="3*"></DataGridCheckBoxColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="117,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="TextBox_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="782,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="TextBox_TextChanged_1"/>
+        <Label Content="Pretraga po nazivu:" HorizontalAlignment="Left" Height="28" Margin="654,344,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,0.36"/>
+        <Label Content="Pretraga po oznaci:" HorizontalAlignment="Left" Height="28" Margin="0,344,0,0" VerticalAlignment="Top"/>
+
+        <Button Content="Izmeni" HorizontalAlignment="Left" Margin="515,390,0,0" VerticalAlignment="Top" Width="120" Height="30" Click="Button_Click"/>
+        <Button Content="Obriši" HorizontalAlignment="Left" Margin="336,390,0,0" VerticalAlignment="Top" Width="120" Height="30" Click="Button_Click_1"/>
+    </Grid>
+</Window>

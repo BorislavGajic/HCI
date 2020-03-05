@@ -1,0 +1,14 @@
+﻿<Window x:Class="WpfApp1.Dijalozi.DodajKorisnikaTool"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.Dijalozi"
+        mc:Ignorable="d"
+        Title="DodajKorisnikaTool" Height="200" Width="174" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Button Name="Resurs" Content="Korisnika" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.36,-0.05" Click="Button_Click_1" Height="47"/>
+        <Button Content="Tip" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Width="144" Height="47" Click="Button_Click_2"/>
+        <Button Content="Etiketu" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,110,0,0" Width="144" Height="47" Click="Button_Click_3"/>
+    </Grid>
+</Window>
